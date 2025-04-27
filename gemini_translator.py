@@ -40,10 +40,10 @@ LANGUAGES = [
 ]
 
 # Rate limiting settings
-INITIAL_DELAY_BETWEEN_ROWS = 0.5        # Start with this many seconds between rows
+INITIAL_DELAY_BETWEEN_ROWS = 0.1        # Start with this many seconds between rows
 MAX_DELAY = 10                        # Maximum delay in seconds
-BACKOFF_FACTOR = 1.2                    # Multiply delay by this factor on error
-JITTER = 0.5                          # Add random jitter (0-0.5 seconds) to avoid thundering herd
+BACKOFF_FACTOR = 1.1                    # Multiply delay by this factor on error
+JITTER = 0.1                          # Add random jitter (0-0.1 seconds) to avoid thundering herd
 
 # Checkpoint settings
 RESUME_FROM_CHECKPOINT = True         # Whether to resume from checkpoint
