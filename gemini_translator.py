@@ -12,31 +12,31 @@ from datetime import datetime
 load_dotenv()
 
 # Configuration variables - modify these as needed
-INPUT_FILE = 'Generated_Questions.csv'                             # Input CSV file
+INPUT_FILE = 'FINAL_DATASET_ENGLISH.csv'              # Input CSV file
 OUTPUT_DIR = 'translated'                           # Directory to store translated files
 GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')   # API key from .env file
-MODEL = 'gemini-2.5-flash-preview-04-17'                 # Gemini model to use
+MODEL = 'gemini-2.5-flash-preview-04-17'            # Gemini model to use
 REPLACE_ORIGINAL = True                             # Replace original content instead of adding new columns
 
 # Columns to translate (by index) - adjust these for your CSV
-COLUMNS_TO_TRANSLATE = [3, 4, 5, 6, 7, 8,  12, 13, 14]                       # Indices of columns to translate (0-based index)
+COLUMNS_TO_TRANSLATE = [3, 4, 5, 6, 7, 8, 9, 10, 11]  # Indices of columns to translate (0-based index)
 
 # Target languages for translation 
 LANGUAGES = [
     'Hindi', 
     'Punjabi',
-    'Urdu',
-    'Telugu',
-    'Tamil',
-    'Kannada',
-    'Malayalam',
-    'Bengali',
-    'Assamese',
-    'Odia',
-    'Marathi',
     'Gujarati',
-    'Konkani',
-    'Sindhi'
+    # 'Telugu',
+    # 'Tamil',
+    # 'Kannada',
+    # 'Malayalam',
+    # 'Bengali',
+    # 'Assamese',
+    # 'Odia',
+    # 'Marathi',
+    # 'Urdu',
+    # 'Konkani',
+    # 'Sindhi'
 ]
 
 # Rate limiting settings
@@ -184,7 +184,7 @@ def process_csv_for_language(input_file, language, model):
         
         # Translate specified columns and replace the original content
         for col_idx in COLUMNS_TO_TRANSLATE:
-            if col_idx < len(row) and row[col_idx]:
+            if col_idx < len(row) and row[col_idx] and row[col_idx].strip():  # Check if column exists and is not empty
                 original_text = row[col_idx]
                 col_name = header[col_idx] if col_idx < len(header) else f"Column_{col_idx}"
                 
@@ -200,8 +200,11 @@ def process_csv_for_language(input_file, language, model):
                 else:
                     print(f"  ✓ {language}: {translated}")
             else:
-                # If the column doesn't exist or is empty, keep it as is
-                print(f"  Skipping empty column at index {col_idx}")
+                # If the column doesn't exist or is empty, skip it
+                if col_idx < len(row):
+                    print(f"  Skipping empty column '{header[col_idx] if col_idx < len(header) else f'Column_{col_idx}'}' at index {col_idx}")
+                else:
+                    print(f"  Skipping non-existent column at index {col_idx}")
         
         # Write the row to the output file
         with open(output_file, 'a', newline='', encoding='utf-8') as outfile:
