@@ -10,8 +10,18 @@ load_dotenv()
 # Configuration variables
 INPUT_FILE = 'test.csv'
 OUTPUT_FILE = 'test_out.csv'  # Will be auto-generated based on INPUT_FILE and COLUMN_NAME if None
-PROMPT = "You are a cultural expert. Given a simple factual question, generate a reasoning-based version that requires cultural commonsense to answer. Avoid directly naming the answer. Include contextual or narrative clues instead. It is necessary to add a reference to the image of the cultural artifact like 'as referenced in the image'. DO NOT include any prefixes or labels like 'Question:', 'Transformed question:', or similar text in your response. Return ONLY the rewritten question without any additional text."
-COLUMN_NAME = "Analogy Question"
+#Prompt to generate Common Sense Cultural Question.
+PROMPT1 = "You are a cultural expert. Given a simple factual question, generate a reasoning-based version that requires cultural commonsense to answer. Avoid directly naming the answer. Include contextual or narrative clues instead.It is necessary to add a reference to the image of the cultural artifact like 'as referenced in the image'"
+
+#comment the first prompt and uncomment the second prompt when you want to generate Multi-hop reasoning Question.
+#Prompt to generate Multi-hop reasoning Question.
+#PROMPT2 = "Transform the following factual question into a multi-hop reasoning question. The answer should require at least two connected facts to arrive at the final response. Add cultural or historical information to guide reasoning.It is necessary to add a reference to the image of the cultural artifact like 'as referenced in the image'. DO NOT include any prefixes or labels like 'Multi-hop Question:', 'Transformed question:', or similar text in your response Return ONLY the rewritten question without any additional text."
+
+#comment the first prompt and uncomment the third prompt when you want to generate Analogy Question.
+#Prompt to generate Analogy Question.
+#PROMPT3 = "Create a reasoning-based cultural question using analogy. The answer that is given below should be inferred by relating cultural equivalents or symbols. It is necessary to add a reference to the image of the cultural artifact like 'as referenced in the image'. DO NOT include any prefixes or labels like 'Question:', 'Transformed question:', or similar text in your response. Return ONLY the rewritten question without any additional text."
+
+COLUMN_NAME = "Common Sense Cultural Question"
 API_KEY = ""  # Your OpenAI API key, or leave empty to use environment variable
 # Batch processing settings
 BATCH_SIZE = 5  # Number of questions to process in a batch
