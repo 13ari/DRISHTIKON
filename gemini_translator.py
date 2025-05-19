@@ -15,7 +15,7 @@ load_dotenv()
 INPUT_FILE = 'FINAL_DATASET_ENGLISH.csv'              # Input CSV file
 OUTPUT_DIR = 'translated'                           # Directory to store translated files
 GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')   # API key from .env file
-MODEL = 'gemini-2.5-flash-preview-04-17'            # Gemini model to use
+MODEL = 'gemini-2.0-flash'            # Gemini model to use
 REPLACE_ORIGINAL = True                             # Replace original content instead of adding new columns
 
 # Columns to translate (by index) - adjust these for your CSV
@@ -23,20 +23,7 @@ COLUMNS_TO_TRANSLATE = [3, 4, 5, 6, 7, 8, 9, 10, 11]  # Indices of columns to tr
 
 # Target languages for translation 
 LANGUAGES = [
-    'Hindi', 
-    'Punjabi',
-    'Gujarati',
-    # 'Telugu',
-    # 'Tamil',
-    # 'Kannada',
-    # 'Malayalam',
-    # 'Bengali',
-    # 'Assamese',
-    # 'Odia',
-    # 'Marathi',
-    # 'Urdu',
-    # 'Konkani',
-    # 'Sindhi'
+    'Telugu', 
 ]
 
 # Rate limiting settings

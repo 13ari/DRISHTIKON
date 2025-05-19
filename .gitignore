@@ -1,1 +1,7 @@
+Outputs/*
+checkpoints/*
+logs/*
+translated/*
+translated_backup/*
+FINAL_DATASET_ENGLISH.csv
 .env
