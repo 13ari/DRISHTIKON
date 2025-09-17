@@ -1,170 +1,91 @@
-DRISHTIKON: A Multimodal Multilingual Benchmark for Testing 
-Language Models’ Understanding on Indian Culture
+## DRISHTIKON: A Multimodal Multilingual Benchmark for Testing Language Models' Understanding on Indian Culture
 
+### Overview
 
-task_categories:
-- visual-question-answering
-language:
-- en
-- hi
-- bn
-- gu
-- as
-- kn
-- mr
-- ml
-- or
-- pa
-- sd
-- ta
-- te
-- ur
-tags:
-- Indian_Culture
-pretty_name: D
-size_categories:
-- 10K<n<100K
+DRISHTIKON is a **first-of-its-kind multimodal, multilingual benchmark** dedicated to evaluating Vision-Language Models’ (VLMs) ability to understand Indian culture. Unlike existing global benchmarks, DRISHTIKON focuses exclusively on India’s cultural richness, spanning **15 languages, all 28 states, and 8 union territories**, with **64,288 carefully curated text-image pairs**.
+
+The dataset captures **festivals, attire, cuisines, rituals, art forms, architecture, personalities, and heritage**, enabling **fine-grained evaluation of cultural reasoning** in multimodal models.
+
+* **Paper:** [EMNLP 2024](https://doi.org/10.18653/v1/2024.emnlp-main.882)
+* **Dataset:** [Hugging Face](https://huggingface.co/datasets/13ari/DRISHTIKON)
+
 ---
 
-# Dataset Card for Dataset Name
+### ✨ Key Features
 
-Dataset For Paper named DRISHTIKON: A Multimodal Multilingual Benchmark for Testing Language Models' Understanding on Indian Culture
+* **Scale:** 64K+ text-image pairs.
+* **Languages:** 15 (including English + 14 major Indian languages).
+* **Coverage:** All 28 states and 8 union territories.
+* **Images:** Collected from **public websites** and provided as **zipped archives** on Hugging Face.
+* **Question Types:**
 
-This dataset card aims to be a base template for new datasets. It has been generated using [this raw template](https://github.com/huggingface/huggingface_hub/blob/main/src/huggingface_hub/templates/datasetcard_template.md?plain=1).
+  * General questions
+  * Cultural commonsense questions
+  * Multi-hop reasoning questions
+  * Analogy-based questions
 
-## Dataset Details
-A large-scale multimodal and multilingual benchmark with over 64,000 text-image pairs across 15 languages, designed to test the cultural understanding of Vision-Language Models (VLMs) on Indian heritage.
+---
 
-### Dataset Description
-DRISHTIKON offers deep, fine-grained coverage across India’s diverse regions, spanning 15 languages, covering all 28 states and 
-8 union territories, and incorporating over 64,000 aligned text-image pairs. The dataset captures rich cultural themes including 
-festivals, attire, cuisines, art forms, and historical heritage and many more.
- 
+### Dataset Structure
 
-<!-- Provide a longer summary of what this dataset is. -->
+Each entry contains:
 
+* Culturally grounded **question** (MCQ format with 4 options).
+* **Correct answer label**.
+* **Associated image (stored in zip, path provided)**.
+* Metadata: language, state/UT, cultural category (attire, cuisine, rituals, etc.), question type.
 
+---
 
-- **Curated by:** [More Information Needed]
-- **Funded by [optional]:** [More Information Needed]
-- **Shared by [optional]:** [More Information Needed]
-- **Language(s) (NLP):** [More Information Needed]
-- **License:** [More Information Needed]
+### 📊 Uses
 
-### Dataset Sources [optional]
+**Direct Use:**
 
-<!-- Provide the basic links for the dataset. -->
+* Benchmarking VLMs for cultural understanding.
+* Evaluating multilingual multimodal reasoning.
+* Comparative analysis of open-source vs proprietary systems.
 
-- **Repository:** [More Information Needed]
-- **Paper [optional]:** [More Information Needed]
-- **Demo [optional]:** [More Information Needed]
+**Out-of-Scope Use:**
 
-## Uses
+* Commercial applications.
+* Misuse to reinforce stereotypes or generate culturally insensitive content.
 
-<!-- Address questions around how the dataset is intended to be used. -->
+---
 
-### Direct Use
+### ⚙️ Dataset Creation
 
-<!-- This section describes suitable use cases for the dataset. -->
+* **Data Sources:** Wikipedia, Holidify, Ritiriwaz, Google Arts & Culture, Times of India, and others.
+* **MCQs:** 2,126 base questions, extended with 2,160 reasoning-augmented MCQs.
+* **Multilingual Expansion:** Translated into 14 Indian languages with Gemini Pro, human-verified.
+* **Annotations:** Manual tagging of cultural categories, peer-reviewed & expert-adjudicated.
+* **Images:** Acquired from **public websites**; distributed as zipped archives for reproducibility.
 
-[More Information Needed]
+---
 
-### Out-of-Scope Use
+### ⚠️ Bias, Risks, and Limitations
 
-<!-- This section addresses misuse, malicious use, and uses that the dataset will not work well for. -->
+* Not exhaustive of all cultural nuances.
+* Limited coverage for dialects and micro-traditions.
+* May reflect annotator bias despite careful validation.
+* Low-resource languages remain challenging for models.
 
-[More Information Needed]
+---
 
-## Dataset Structure
+### 📜 License
 
-<!-- This section provides a description of the dataset fields, and additional information about the dataset structure such as criteria used to create the splits, relationships between data points, etc. -->
+* Released for **research and non-commercial use only**.
+* Images are included in **zipped format** (collected from public websites).
+* Users must comply with original source licenses.
 
-[More Information Needed]
+---
 
-## Dataset Creation
+### ✍️ Citation
 
-### Curation Rationale
-
-<!-- Motivation for the creation of this dataset. -->
-
-[More Information Needed]
-
-### Source Data
-
-<!-- This section describes the source data (e.g. news text and headlines, social media posts, translated sentences, ...). -->
-
-#### Data Collection and Processing
-
-<!-- This section describes the data collection and processing process such as data selection criteria, filtering and normalization methods, tools and libraries used, etc. -->
-
-[More Information Needed]
-
-#### Who are the source data producers?
-
-<!-- This section describes the people or systems who originally created the data. It should also include self-reported demographic or identity information for the source data creators if this information is available. -->
-
-[More Information Needed]
-
-### Annotations [optional]
-
-<!-- If the dataset contains annotations which are not part of the initial data collection, use this section to describe them. -->
-
-#### Annotation process
-
-<!-- This section describes the annotation process such as annotation tools used in the process, the amount of data annotated, annotation guidelines provided to the annotators, interannotator statistics, annotation validation, etc. -->
-
-[More Information Needed]
-
-#### Who are the annotators?
-
-<!-- This section describes the people or systems who created the annotations. -->
-
-[More Information Needed]
-
-#### Personal and Sensitive Information
-
-<!-- State whether the dataset contains data that might be considered personal, sensitive, or private (e.g., data that reveals addresses, uniquely identifiable names or aliases, racial or ethnic origins, sexual orientations, religious beliefs, political opinions, financial or health data, etc.). If efforts were made to anonymize the data, describe the anonymization process. -->
-
-[More Information Needed]
-
-## Bias, Risks, and Limitations
-
-<!-- This section is meant to convey both technical and sociotechnical limitations. -->
-
-[More Information Needed]
-
-### Recommendations
-
-<!-- This section is meant to convey recommendations with respect to the bias, risk, and technical limitations. -->
-
-Users should be made aware of the risks, biases and limitations of the dataset. More information needed for further recommendations.
-
-## Citation [optional]
-
-<!-- If there is a paper or blog post introducing the dataset, the APA and Bibtex information for that should go in this section. -->
-
-**BibTeX:**
-
-[More Information Needed]
-
-**APA:**
-
-[More Information Needed]
-
-## Glossary [optional]
-
-<!-- If relevant, include terms and calculations in this section that can help readers understand the dataset or dataset card. -->
-
-[More Information Needed]
-
-## More Information [optional]
-
-[More Information Needed]
-
-## Dataset Card Authors [optional]
-
-[More Information Needed]
-
-## Dataset Card Contact
-
-[More Information Needed]
+```bibtex
+@inproceedings{maji2024drishtikon,
+  title={DRISHTIKON: A Multimodal Multilingual Benchmark for Testing Language Models’ Understanding on Indian Culture},
+  author={Maji, Arijit and Kumar, Raghvendra and Ghosh, Akash and Anushka, and Shah, Nemil and Borah, Abhilekh and Shah, Vanshika and Mishra, Nishant and Saha, Sriparna},
+  booktitle={Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  year={2024}
+}
+```
