@@ -82,10 +82,10 @@ Each entry contains:
 ### ✍️ Citation
 
 ```bibtex
-@inproceedings{maji2024drishtikon,
+@inproceedings{maji2025drishtikon,
   title={DRISHTIKON: A Multimodal Multilingual Benchmark for Testing Language Models’ Understanding on Indian Culture},
   author={Maji, Arijit and Kumar, Raghvendra and Ghosh, Akash and Anushka, and Shah, Nemil and Borah, Abhilekh and Shah, Vanshika and Mishra, Nishant and Saha, Sriparna},
-  booktitle={Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
-  year={2024}
+  booktitle={Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  year={2025}
 }
 ```
