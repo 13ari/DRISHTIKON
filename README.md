@@ -37,55 +37,9 @@ Each entry contains:
 
 ---
 
-### 📊 Uses
-
-**Direct Use:**
-
-* Benchmarking VLMs for cultural understanding.
-* Evaluating multilingual multimodal reasoning.
-* Comparative analysis of open-source vs proprietary systems.
-
-**Out-of-Scope Use:**
-
-* Commercial applications.
-* Misuse to reinforce stereotypes or generate culturally insensitive content.
-
----
-
-### ⚙️ Dataset Creation
-
-* **Data Sources:** Wikipedia, Holidify, Ritiriwaz, Google Arts & Culture, Times of India, and others.
-* **MCQs:** 2,126 base questions, extended with 2,160 reasoning-augmented MCQs.
-* **Multilingual Expansion:** Translated into 14 Indian languages with Gemini Pro, human-verified.
-* **Annotations:** Manual tagging of cultural categories, peer-reviewed & expert-adjudicated.
-* **Images:** Acquired from **public websites**; distributed as zipped archives for reproducibility.
-
----
-
-### ⚠️ Bias, Risks, and Limitations
-
-* Not exhaustive of all cultural nuances.
-* Limited coverage for dialects and micro-traditions.
-* May reflect annotator bias despite careful validation.
-* Low-resource languages remain challenging for models.
-
----
-
-### 📜 License
-
-* Released for **research and non-commercial use only**.
-* Images are included in **zipped format** (collected from public websites).
-* Users must comply with original source licenses.
-
----
-
-### ✍️ Citation
-
-```bibtex
-@inproceedings{maji2025drishtikon,
-  title={DRISHTIKON: A Multimodal Multilingual Benchmark for Testing Language Models’ Understanding on Indian Culture},
-  author={Maji, Arijit and Kumar, Raghvendra and Ghosh, Akash and Anushka, and Shah, Nemil and Borah, Abhilekh and Shah, Vanshika and Mishra, Nishant and Saha, Sriparna},
-  booktitle={Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+```@inproceedings{Maji2025Drishtikon,
+  title={DRISHTIKON: A Multimodal Multilingual Benchmark for Testing Language Models' Understanding on Indian Culture},
+  author={Arijit Maji and Raghvendra Kumar and Akash Ghosh and Anushka and Nemil Shah and Abhilekh Borah and Vanshika Shah and Nishant Mishra and Sriparna Saha},
+  booktitle={EMNLP 2025},
   year={2025}
-}
-```
+}```
