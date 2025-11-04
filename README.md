@@ -7,7 +7,7 @@ DRISHTIKON is a **first-of-its-kind multimodal, multilingual benchmark** dedicat
 The dataset captures **festivals, attire, cuisines, rituals, art forms, architecture, personalities, and heritage**, enabling **fine-grained evaluation of cultural reasoning** in multimodal models.
 
 * **Paper:** [DRISHTIKON: A Multimodal Multilingual Benchmark for Testing Language Models' Understanding on Indian Culture](https://huggingface.co/papers/2509.19274)
-* **Dataset:** [Hugging Face](https://huggingface.co/datasets/13ari/DRISHTIKON)
+* **Dataset:** [DRISHTIKON](https://huggingface.co/datasets/13ari/DRISHTIKON)
 
 ---
 
